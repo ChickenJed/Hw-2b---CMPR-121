@@ -1,2 +1,74 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+// Attached: HW_2a, 2b, 2c, 2d
+// ======================================================
+// Program: HW_2b
+// ======================================================
+// Programmer: Christian Verry
+// Class: CS CMPR 121
+// ======================================================
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+const int ROWS = 3;
+const int COLS = 4;
+
+void getData(int numArray[][COLS]);
+void displayArray(int numArray[][COLS]);
+
+
+int main()
+{
+	const int ROWS = 3;
+	const int COLS = 4;
+	int numArray[ROWS][COLS];
+
+	getData(numArray);
+	system("CLS");
+
+	displayArray(numArray);
+
+	return 0;
+}
+
+
+/* displayArray function takes input from numArray entered by the user
+and displays the 2D array
+*/
+void displayArray(int numArray[][COLS])
+{
+
+	cout << "\nHere is the data in the 2-Dimensional array: \n\n";
+
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << setw(5) << right << numArray[i][j];
+		}
+
+		cout << '\n';
+	}
+}
+
+
+/* getData function prompts user to enter integers into a 2D array
+at a const size.
+*/
+void getData(int numArray[][COLS])
+{
+	cout << "Enter integers into the 2-Dimensional array: \n\n";
+
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << "Enter a number: ";
+			cin >> numArray[i][j];
+		}
+	}
+
+	return;
+}
